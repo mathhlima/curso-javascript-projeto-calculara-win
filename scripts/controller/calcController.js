@@ -9,14 +9,20 @@ class Calculator {
     }
 
     initialize(){
-        
+
     }
+
+    initKeyboard(){
+
+    }
+
+
 
     addEventListenerAll(element, events, fn){
 
-        events.split().forEach(event => {
+        events.split(' ').forEach(event => {
             element.addEventListener(event, fn, false);
-        })
+        });
 
     }
 
@@ -26,9 +32,10 @@ class Calculator {
 
         buttons.forEach((btn, index) => {
             
-            this.addEventListenerAll(btn, 'click')
+            this.addEventListenerAll(btn, 'click');
 
-        })
+
+        });
 
     }
 }
