@@ -1,6 +1,6 @@
-class Calculator {
+class calcController {
 
-    construct(){
+    constructor(){
 
         this.initialize();
         this.initButtonEvents();
@@ -9,11 +9,34 @@ class Calculator {
     }
 
     initialize(){
-
+    
     }
 
     initKeyboard(){
 
+    }
+
+    addOperation(){
+        console.log('jaja calcula');
+    }
+
+    execBtn(value){
+        
+        //console.log(value);
+
+        switch(value){
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':   
+            case '8':
+            case '9':
+               this.addOperation(value);
+        }
     }
 
 
@@ -28,14 +51,23 @@ class Calculator {
 
     initButtonEvents(){
 
-        let buttons = document.querySelectorAll('#botao');
+        let buttons = document.querySelectorAll('[type=button]');
+
+        console.log(buttons);
 
         buttons.forEach((btn, index) => {
             
-            this.addEventListenerAll(btn, 'click');
+            this.addEventListenerAll(btn, 'click', e => {
+                
+                let textBtn = btn.innerHTML;
+                
+                this.execBtn(textBtn);
+                
+            })
 
 
-        });
+
+        })
 
     }
 }
