@@ -5,11 +5,13 @@ class calcController {
         this.initialize();
         this.initButtonEvents();
         this.initKeyboard();
+        this.displayCalcEl = document.querySelector('#display');
 
     }
 
     initialize(){
-    
+        
+        
     }
 
     initKeyboard(){
@@ -37,6 +39,16 @@ class calcController {
             case '9':
                this.addOperation(value);
         }
+    }
+
+    get displayCalc(){
+
+        return this.displayCalcEl.innerHTML;
+
+    }
+
+    set displayCalc(value){
+        this.displayCalcEl.innerHTML = value;
     }
 
 
